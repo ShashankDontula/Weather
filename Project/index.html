@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Air Quality Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ Weather & Air Quality Monitor</h1>
+        
+        <div class="api-notice">
+            ⚠️ Please add your WeatherAPI.com API key to the WEATHER_API_KEY variable in the script section
+        </div>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" id="cityInput" placeholder="Enter city name (e.g., New York, London)">
+            <button class="search-btn" onclick="searchWeather()">Search</button>
+            <button class="location-btn" onclick="getCurrentLocation()">📍 Use My Location</button>
+        </div>
+
+        <div id="locationInfo" class="location-info"></div>
+        <div id="loading" class="loading" style="display: none;">Loading weather and air quality data...</div>
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div class="cards-container" id="dataContainer" style="display: none;">
+            <!-- Current Weather Card -->
+            <div class="card">
+                <h2>🌡️ Current Weather</h2>
+                <div class="weather-main">
+                    <div>
+                        <div class="temp" id="temperature">--°</div>
+                        <div id="description">--</div>
+                    </div>
+                    <img id="weatherIcon" class="weather-icon" src="" alt="Weather icon">
+                </div>
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Feels like</span>
+                        <span class="detail-value" id="feelsLike">--°</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Humidity</span>
+                        <span class="detail-value" id="humidity">--%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Wind Speed</span>
+                        <span class="detail-value" id="windSpeed">-- km/h</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Pressure</span>
+                        <span class="detail-value" id="pressure">-- mb</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Visibility</span>
+                        <span class="detail-value" id="visibility">-- km</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">UV Index</span>
+                        <span class="detail-value" id="uvIndex">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Air Quality Card -->
+            <div class="card">
+                <h2>🌬️ Air Quality</h2>
+                <div id="aqiLevel" class="aqi-level">Loading...</div>
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="detail-label">CO</span>
+                        <span class="detail-value" id="co">-- μg/m³</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">NO₂</span>
+                        <span class="detail-value" id="no2">-- μg/m³</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">O₃</span>
+                        <span class="detail-value" id="o3">-- μg/m³</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">PM2.5</span>
+                        <span class="detail-value" id="pm25">-- μg/m³</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">PM10</span>
+                        <span class="detail-value" id="pm10">-- μg/m³</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">SO₂</span>
+                        <span class="detail-value" id="so2">-- μg/m³</span>
+                    </div>
+                </div>
+                <div id="healthRecommendations" class="health-recommendations" style="display: none;">
+                    <h3>Health Recommendations</h3>
+                    <ul id="healthList"></ul>
+                </div>
+            </div>
+
+            <!-- 5-Day Forecast Card -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>📅 5-Day Forecast</h2>
+                <div class="forecast-container" id="forecastContainer">
+                    <!-- Forecast items will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

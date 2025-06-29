@@ -1,0 +1,267 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .search-input {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            width: 300px;
+            outline: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-btn, .location-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #ff6b6b;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-btn:hover, .location-btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .api-notice {
+            background: rgba(255, 193, 7, 0.9);
+            color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .weather-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .temp {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .weather-icon {
+            width: 80px;
+            height: 80px;
+        }
+
+        .weather-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .detail-value {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .aqi-level {
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .aqi-good { background: #4CAF50; }
+        .aqi-moderate { background: #FFEB3B; color: #333; }
+        .aqi-unhealthy-sensitive { background: #FF9800; }
+        .aqi-unhealthy { background: #F44336; }
+        .aqi-very-unhealthy { background: #9C27B0; }
+        .aqi-hazardous { background: #8B0000; }
+
+        .forecast-container {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .forecast-item {
+            min-width: 120px;
+            text-align: center;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px 10px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .forecast-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: scale(1.05);
+        }
+
+        .forecast-day {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .forecast-temp {
+            color: #667eea;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .forecast-icon {
+            width: 40px;
+            height: 40px;
+            margin: 5px 0;
+        }
+
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            margin: 50px 0;
+        }
+
+        .error {
+            background: rgba(244, 67, 54, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .location-info {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .health-recommendations {
+            background: rgba(76, 175, 80, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .health-recommendations h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .health-recommendations ul {
+            padding-left: 20px;
+        }
+
+        .health-recommendations li {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .search-input {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .weather-main {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .weather-details {
+                grid-template-columns: 1fr;
+            }
+        }
