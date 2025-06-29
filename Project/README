@@ -1,1 +1,19 @@
+Overview
 
+Weather Predicter is a simple frontend application that displays current weather information using a public weather API. Built with HTML, CSS, and JavaScript, it incorporates DevOps practices like version control with GitHub and automated deployment with Netlify.
+
+Features
+
+Fetch and display current weather data by city.
+
+Show temperature, weather conditions, and relevant icons.
+
+Responsive, clean user interface.
+
+DevOps & Deployment
+
+Git and GitHub for source control.
+
+Automatic deployment to Netlify on every push to the main branch.
+
+Lightweight CI/CD workflow.
