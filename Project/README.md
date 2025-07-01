@@ -1,1 +1,31 @@
-Weather Predicter is a frontend web application that fetches and displays current weather data using a public weather API. Built with HTML, CSS, and JavaScript, it showcases how DevOps practices such as version control with GitHub and automated deployment with Netlify can be effectively applied to frontend projects. It features the ability to search and display current weather by city, showing temperature, conditions, and icons in a responsive and clean design.
+🌦️ Weather & Air Quality Predictor Web App
+A lightweight, responsive frontend web application that predicts and displays current weather and air quality information. Built using HTML, CSS, and JavaScript, with automated deployment via Git and Netlify.
+
+🚀 Live Demo
+🔗 [Click here to view the live site (replace with your Netlify link)](https://weather-air-3f773d.netlify.app/)
+
+📌 Features
+🌡️ Real-Time Weather Data Fetching (temperature, humidity, etc.)
+🍃 Air Quality Index (AQI) Monitoring with clear indicators
+📍 Location-Based Weather & AQI Information
+🧭 User-Friendly, Responsive UI Design
+🌈 Dynamic Weather Icons & Condition Descriptions
+📬 Contact Form with Input Validation
+⚙️ Automated CI/CD Deployment via Netlify
+🌐 Global CDN Hosting for Fast Performance
+
+🛠️ Technologies Used
+HTML5 – Semantic, well-structured webpage markup
+
+CSS3 – Styling, layout, and responsive design
+
+JavaScript (Vanilla) – API requests, DOM updates, interactivity
+
+Git – Local version control
+
+GitHub – Remote repository and commit management
+
+Netlify – Automated deployment with continuous delivery
+
+OpenWeatherMap API / Air Quality API – Source for weather and air quality data
+
